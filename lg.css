@@ -1,0 +1,504 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    max-width: 1760px;
+    height: 106px;
+    margin: 0 auto;
+}
+
+.header-top {
+    height: 66px;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -3px;
+}
+
+.header-logo {
+    padding-left: 42px;
+    position: relative;
+    top: 2px;
+}
+
+.header-logo a,
+.header-icons a {
+    padding: 0;
+    margin: 0;
+}
+
+.header-logo a {
+    display: block;
+    width: 100px;
+    height: 29px;
+    background-image: url(./img/lg_logo.svg);
+    background-size: 100% 100%;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 600px;
+}
+
+.header-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-icons a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: 100% 100%;
+}
+
+.header-icons a.search {
+    background-image: url(./img/search.svg);
+    padding-right: 5px;
+}
+
+.header-icons a.mypage {
+    background-image: url(./img/person.svg);
+    margin-left: 15px;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+.header-icons a.cart {
+    background-image: url(./img/cart.svg);
+    margin-left: 10px;
+}
+
+.line {
+    display: block;
+    margin-left: 30px;
+    margin-right: 25px;
+    width: 1px;
+    height: 14px;
+    background-color: #ddd;
+}
+
+.company {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.company-drop{
+    display: none;
+    background-color: #fff;
+    width: 120px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+    margin-top: 5px;
+}
+.company-drop a{
+    text-decoration: none;
+    color: #000;
+}
+.company-drop-item{
+    padding: 8px 24px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.company:hover .company-drop {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: -33px;
+    padding-top: 4px;
+    z-index: 20;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-links a {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(./img/btn-outlink-16.svg);
+    background-size: 100% 100%;
+}
+
+.b2b,
+.bestshop {
+    padding-right: 34px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+/* header bottom 스타일 */
+.header-bottom {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    height: 40px;
+    position: relative;
+    top: -12px;
+    left: 2px;
+    flex-wrap: wrap;
+    min-width: 600px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    height: 36px;
+}
+
+.header-nav ul>li {
+    margin-right: 24px;
+    padding: 4px 0 8px;
+}
+
+.header-nav-right {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    height: 34px;
+    padding: 8px 16px;
+    position: relative;
+    top: -1px;
+}
+
+.right-rink1 {
+    width: 113px;
+    height: 18px;
+    padding-right: 10px;
+    background-image: url(./img/logo-signature.svg);
+    background-size: 100% 100%;
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+.right-rink2 {
+    width: 107px;
+    height: 18px;
+    margin-left: 6px;
+    padding-right: 10px;
+    background-image: url(./img/logo-objet-collection.svg);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.right-rink3 {
+    width: 63px;
+    height: 18px;
+    margin-left: 9px;
+    padding-right: 10px;
+    background-image: url(./img/logo-thinq.svg);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+/* main 스타일 */
+.main {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-video {
+    padding: 0 30px;
+    max-width: 1760px;
+    height: 650px;
+    /* background-color: gray; */
+    position: relative;
+}
+
+.video1 {
+    width: 100%;
+    height: 100%;
+}
+
+.video1-img {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    right: 76px;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 23px 30px 100px 30px;
+    text-align: center;
+}
+
+.b-title {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+    margin-bottom: 10px;
+}
+
+.b-content {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.b-click {
+    padding-top: 11px;
+}
+
+.b-click span {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px 30.5px;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.b-click span:hover {
+    background-color: #e2132c;
+    border: 1px solid #e2132c;
+    color: white;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 1460px;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.article1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.arti-title {
+    margin-bottom: 32px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 46px;
+    text-align: center;
+}
+
+.arti-img img {
+    width: 100%;
+    height: 416px;
+}
+
+.arti-img-text {
+    color: #fff;
+    position: absolute;
+    width: 50%;
+    top: 35%;
+    right: 0;
+    cursor: pointer;
+}
+
+.arti-img-text1 {
+    color: #000;
+    position: absolute;
+    width: 50%;
+    top: 35%;
+    left: 0;
+    cursor: pointer;
+}
+
+.arti-img-text p,
+.arti-img-text1 p {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+    letter-spacing: -1px;
+}
+
+.arti-img-text span,
+.arti-img-text1 span {
+    padding: 10px 31px 12px 31px;
+    border-radius: 23px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+.arti-img-text span {
+    border: 1px solid #fff;
+}
+
+.arti-img-text1 span {
+    border: 1px solid #000;
+}
+
+.arti-img-text a,
+.arti-img-text1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.article2 {
+    margin-top: 120px;
+    position: relative;
+}
+
+.choice-box,
+.gif-box {
+    display: flex;
+    width: 1404px;
+}
+
+.box-item {
+    width: 702px;
+    height: 174px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 1px 4px 12px 0 rgb(0 0 0 / 14%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 25px;
+}
+
+.gif-item {
+    width: 678px;
+    height: 156px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.box-item img,
+.gif-item img {
+    width: 64px;
+    height: 64px;
+    margin: 0 50px;
+}
+
+.box-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.box-comment,
+.gif-comment {
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.box-comment {
+    font-size: 20px;
+    line-height: 29px;
+    text-align: start;
+}
+
+.gif-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: start;
+}
+
+.gif-comment {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+}
+
+.article-end {
+    margin: 120px 0;
+}
+
+.choice-box2 {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.regi,
+.sup,
+.careship {
+    width: 444px;
+    height: 204px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 23px;
+    padding-top: 38px;
+    cursor: pointer;
+}
+
+.box2-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.box2-comment {
+    margin-top: 8px;
+}
+/* 하단 고정버튼 */
+.fix{
+    position: fixed;
+    bottom:60px;
+    right: 7px;
+}
+/* 푸터 스타일 */
+.footer{
+    background-color: #f4f4f4;
+    padding: 0 40px 48px;
+}
