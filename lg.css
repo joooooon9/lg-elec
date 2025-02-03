@@ -15,6 +15,7 @@ body {
     max-width: 1760px;
     height: 106px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .header-top {
@@ -23,13 +24,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     top: -3px;
 }
 
 .header-logo {
     padding-left: 42px;
-    position: relative;
+    
     top: 2px;
 }
 
@@ -126,7 +126,6 @@ body {
     padding-top: 4px;
     z-index: 20;
 }
-
 .header-links {
     display: flex;
     align-items: center;
@@ -153,7 +152,6 @@ body {
 .header-bottom {
     display: flex;
     align-items: center;
-    padding-left: 40px;
     height: 40px;
     position: relative;
     top: -12px;
@@ -168,6 +166,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     height: 60px;
+    padding-left: 40px;
 }
 
 .header-nav ul {
@@ -181,7 +180,87 @@ body {
     margin-right: 24px;
     padding: 4px 0 8px;
 }
-
+.nav-menu{
+}
+.nav-menu:hover{
+    border-bottom: 5px solid black;
+}
+.dropdown{
+    display: none;
+    position: absolute;
+    top: 115%;
+    width: 100%;
+    left: 0;
+    z-index: 105;
+    padding: 25px 40px;  
+    /* background-color: #fff; */
+    background-color: aquamarine;
+}
+.nav-menu:hover .dropdown{
+    display: block;
+}
+.sub-menu{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #666;
+}
+.sub-menu-items{
+    display: none;
+    gap: 200px;
+}
+.sub-menu-items a{
+    text-decoration: none;
+    color: #000;
+}
+.itemlist{
+    width: 22.5%;
+}
+.item-top{
+    
+}
+.item-bottom{
+    margin-top: 30px;
+}
+.p-title{
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.p-content{
+    font-size: 14px;
+    color: #111;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+.item-img{
+    text-align: center;
+}
+.item-img a{
+    text-decoration: none;
+    color: #000;
+}
+.hash-tag{
+    margin-top: 48px;
+}
+.hash-tag > div
+{
+    margin-bottom: 8px;
+}
+.hash-tag a{
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    border: 1px solid #ddd;
+    padding: 7px 8px;
+    border-radius: 8px;
+}
+.item-flexbox
+{
+    display: flex;
+}
 .header-nav-right {
     display: flex;
     align-items: center;
@@ -250,8 +329,8 @@ body {
 .video1-img {
     position: absolute;
     z-index: 2;
-    top: 16px;
-    right: 76px;
+    top: 33px;
+    right: 66px;
 }
 
 .banner-text {
@@ -278,6 +357,7 @@ body {
 
 .b-click {
     padding-top: 11px;
+    font-weight: 500;
 }
 
 .b-click span {
@@ -494,11 +574,16 @@ body {
 /* 하단 고정버튼 */
 .fix{
     position: fixed;
-    bottom:60px;
-    right: 7px;
+    bottom:50px;
+    right: 40px;
 }
 /* 푸터 스타일 */
 .footer{
     background-color: #f4f4f4;
     padding: 0 40px 48px;
+}
+.footer-top{
+    display: flex;
+    justify-content: center;
+    padding: 48px 0;
 }
