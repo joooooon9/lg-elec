@@ -1,6 +1,7 @@
-//ntersectionObserver api 사용으로 
+//intersection Observer api 사용으로 
 // video 자동재생 자동정지
 // observe는 감지 unobserve는 감지해제
+const targetvideo = document.querySelectorAll(".video1")
 const videoplayer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const video = entry.target;
@@ -11,51 +12,112 @@ const videoplayer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.25 });
-document.querySelectorAll(".video1").forEach(video => {
+
+targetvideo.forEach(video => {
     videoplayer.observe(video);
+});
+
+// 드롭다운 메뉴
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItem = document.querySelector(".nav-menu");
+    const dropdown = document.querySelector(".dropdown");
+    const subcategories = document.querySelectorAll(".sub-menu div");
+    const submenus = document.querySelectorAll(".sub-menu-items");
+
+    menuItem.addEventListener("mouseenter", function () {
+        dropdown.style.display = "flex";
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuItem = document.querySelector(".nav-menu"); // "제품" 메뉴
-        const dropdown = document.querySelector(".dropdown"); // 드롭다운 전체
-        const subcategories = document.querySelectorAll(".sub-menu div"); // 서브 카테고리
-        const submenus = document.querySelectorAll(".sub-menu-items"); // 서브메뉴 컨텐츠
+    menuItem.addEventListener("mouseleave", function () {
+        dropdown.style.display = "none";
+    });
+
+    if (menuItem.getAttribute("data-title") == '0') {
     
-        // 기본값: 첫 번째 메뉴(TV/AV) 활성화
         document.getElementById("1").style.display = "flex";
-    
-        // "제품" 메뉴에 마우스를 올리면 드롭다운 보이기
-        menuItem.addEventListener("mouseenter", function () {
-            dropdown.style.display = "block";
-        });
-    
-        // "제품" 메뉴에서 마우스를 벗어나면 드롭다운 숨기기
-        menuItem.addEventListener("mouseleave", function () {
-            dropdown.style.display = "none";
-        });
-    
-        // 서브카테고리 호버 이벤트
+        
         subcategories.forEach(category => {
             category.addEventListener("mouseover", function () {
                 const target = this.getAttribute("data-target");
-    
-                // 모든 서브메뉴 숨기기
+
                 submenus.forEach(submenu => {
                     submenu.style.display = "none";
                 });
-    
-                // 선택한 서브메뉴 보이기
                 document.getElementById(target).style.display = "flex";
             });
         });
-    
-        // 마우스가 드롭다운을 벗어나면 기본값(TV/AV)으로 되돌림
+
         dropdown.addEventListener("mouseleave", function () {
             submenus.forEach(submenu => {
                 submenu.style.display = "none";
             });
-            document.getElementById("1").style.display = "flex"; // 기본 메뉴(TV/AV) 다시 표시
+            document.getElementById("1").style.display = "flex";
         });
-    });
-    
-    
+    }
+
+});
+
+/* 기존 방법
+const openbtn = document.querySelector(".all-button");
+const view_menu = document.querySelector(".open-menu")
+openbtn.addEventListener('click',function() {
+    if(view_menu.style.display = "none")
+    {
+        view_menu.style.display = "block";
+    }else{
+        view_menu.style.display = "none";
+    }
+});
+*/
+//css에서 active주고 하는 방법
+const openbtn = document.querySelector(".all-button");
+const openbtn_img = document.querySelector(".all-button span img");
+const view_menu = document.querySelector(".open-menu")
+openbtn.addEventListener('click', function () {
+    openbtn_img.classList.toggle("active");
+    view_menu.classList.toggle("active");
+});
+
+
+// window.addEventListener("scroll", function () {
+//     let topBtn = document.querySelector(".top-btn");
+//     let chatBtn = this.document.querySelector(".chat-btn"); 
+//     if (window.scrollY > 500) {
+//         topBtn.classList.add("show");
+//         chatBtn.stop.animate([
+//             {transform: 'translateY(0px)'},
+//             {transform: 'translateY(-70px)'}
+//         ],{
+//             fill: "forwards"
+//         })
+//         console.log("test")
+//     } else {
+//         topBtn.classList.remove("show");
+//         chatBtn.animate([
+//             {transform: 'translateY(70px)'},
+//             {transform: 'translateY(0px)'}
+//         ],{
+//             fill: "forwards"
+//         })
+//     }
+// });
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 500) {
+        $(".chat-btn").stop(true, true).animate({ top: '-70px' }, 500);
+        $(".top-btn").addClass("show");
+    } else {
+        $(".top-btn").removeClass("show");
+        $(".chat-btn").stop(true, true).animate({ top: '0px' });
+    }
+});
+
+$(".chat-btn").click(function () {
+    $(".chat-menu").toggleClass("active");
+    console.log("채팅버튼 클릭");
+});
+
+document.querySelector(".top-btn").addEventListener("click", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+});
+
